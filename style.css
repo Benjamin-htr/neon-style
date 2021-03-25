@@ -1,0 +1,168 @@
+/*Source : https://www.youtube.com/watch?v=DGrGeMGhrZ8&list=WL&index=20&t=0s
+  Site pour les courbes de bézier : https://cubic-bezier.com
+*/
+
+@font-face {
+    font-family: 'existence';
+    src: url('../../Police/existence/ExiL-TT/Existence-Light.ttf')
+}
+
+@keyframes lightsOFF
+{
+    to {color: transparent; text-shadow: none;}
+}
+
+@keyframes verticalDance
+{
+    0% {
+        height: 1px;
+    }
+    100% {
+        height: 20px;
+    }
+}
+
+body {  
+        background-color: black;
+        height : 100vh;
+        width: 100vw;
+ }
+
+.neon { 
+    text-align: center;
+    margin: 150px auto;
+}
+
+span {
+    color: white;
+    font: 150px existence;
+}
+
+.effect1 {
+    text-shadow: 0px 0px 10px lime,
+                0px 0px 20px lime,
+                0px 0px 30px lime,
+                0px 0px 40px lime,
+                0px 0px 50px lime,
+                0px 0px 60px lime,
+                0px 0px 70px lime,
+                0px 0px 80px lime,
+                0px 0px 90px lime,
+                0px 0px 100px lime;
+}
+
+.effect2 {
+    color: orange;
+    text-shadow: 0px 0px 10px red,
+                0px 0px 20px red,
+                0px 0px 30px red,
+                0px 0px 40px red,
+                0px 0px 50px red,
+                0px 0px 60px red,
+                0px 0px 70px red,
+                0px 0px 80px red,
+                0px 0px 90px red,
+                0px 0px 100px red;
+}
+
+.effect3 {
+    text-shadow: 0px 0px 10px dodgerBlue,
+                0px 0px 20px dodgerBlue,
+                0px 0px 30px dodgerBlue,
+                0px 0px 40px dodgerBlue,
+                0px 0px 50px dodgerBlue,
+                0px 0px 60px dodgerBlue,
+                0px 0px 70px dodgerBlue,
+                0px 0px 80px dodgerBlue,
+                0px 0px 90px dodgerBlue,
+                0px 0px 100px dodgerBlue;
+                
+
+}
+
+.shortBlink1 {
+    animation: lightsOFF 100ms 1s 4 alternate,
+            lightsOFF 100ms 5.5s 4 alternate,
+            lightsOFF 100ms 7s 4 alternate;
+    
+}
+
+.shortBlink2 {
+    animation-name : lightsOFF, lightsOFF;
+    animation-duration : 100ms, 100ms;
+    animation-timing-function: cubic-bezier(1, 0, 0, 1), cubic-bezier(1, 0, 0, 1);
+    animation-delay: 1000ms, 8000ms;
+    animation-iteration-count: 4, 4;
+    animation-direction: alter  nate, alternate;
+
+}
+.infiniteBlink1{
+    animation : lightsOFF 100ms cubic-bezier(1,-4,1,2.3) 50ms infinite alternate;
+}
+
+.infiniteBlink2{
+    animation : lightsOFF 2000ms cubic-bezier(1,-0.33,1, 1.2) 50ms infinite alternate;
+}
+
+
+.sbar {
+    height: 1px;
+    width: 4px;
+    float: left;
+    background-color: white;
+    box-shadow: 0px 0px 10px dodgerBlue,
+                0px 0px 20px dodgerBlue,
+                0px 0px 30px dodgerBlue,
+                0px 0px 40px dodgerBlue,
+                0px 0px 50px dodgerBlue,
+                0px 0px 60px dodgerBlue,
+                0px 0px 70px dodgerBlue,
+                0px 0px 80px dodgerBlue,
+                0px 0px 90px dodgerBlue,
+                0px 0px 100px dodgerBlue;
+    opacity: 1;
+    bottom: 5px;
+    position: absolute;
+
+    animation: verticalDance 500ms linear infinite alternate;
+}
+
+.sbar.noAnim {
+ 
+  animation: none !important;
+ 
+ }
+
+.mute_unmute {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.sbar#bar-1 {
+    left: 0px;
+    animation-name: verticalDance;
+    animation-delay: 0ms;
+}
+
+.sbar#bar-2 {
+    left: 8px;
+    animation-name: verticalDance;
+    animation-delay: 300ms;
+}
+
+.sbar#bar-3 {
+    left: 16px;
+    animation-name: verticalDance;
+    animation-delay: 600ms;
+}
+
+.sbar#bar-4 {
+    left: 24px;
+    animation-name: verticalDance;
+    animation-delay: 900ms;
+}
+
