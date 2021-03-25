@@ -4,7 +4,7 @@
 
 @font-face {
     font-family: 'existence';
-    src: url('../../Police/existence/ExiL-TT/Existence-Light.ttf')
+    src: url('./assets/ExiL-TT/Existence-Light.ttf')
 }
 
 @keyframes lightsOFF
